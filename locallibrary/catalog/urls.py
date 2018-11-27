@@ -5,12 +5,12 @@ from catalog import views
 
 
 router = routers.DefaultRouter()
-router.register(r'evidence', views.EvidenceViewSet)
+router.register(r'evidences', views.EvidenceViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('cases/', views.CaseEviView.as_view(), name = 'cases'),
     path('case/<int:pk>', views.CaseDetailView.as_view(), name='case-detail'),
     url(r'^rest/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     ]
