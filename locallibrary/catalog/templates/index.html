@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>CEMS Home</h1>
+  <p>Welcome to CEMS, <em>Criminal Evidence Management System</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The DataBase has the following record counts:</p>
+  <ul>
+    <li><strong>Evidence:</strong> {{ num_evi }}</li>
+    <li><strong>Evidence Case:</strong> {{ num_case }}</li>
+    <li><strong>Evidence Type:</strong> {{ num_type }}</li>
+
+  </ul>
+{% endblock %}

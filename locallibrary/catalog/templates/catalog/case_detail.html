@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Title: Case {{ case.number }}</h1>
+
+  <p><strong>Case Number:</strong> <a href="">{{ case.number }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Summary:</strong> {{ case.summary }}</p>
+ 
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Copies</h4>
+
+    {% for copy in case.evidence_set.all %}
+      <hr>
+      <p>{{ copy.get_status_display }}</p>
+      <p><strong>Evidence Number:</strong> {{copy.evi_number}}</p>
+      <p><strong>Evidence Type:</strong> {{copy.evi_type}}</p>
+      <p><strong>Summary:</strong> {{copy.summary}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
