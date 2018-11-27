@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from rest_framework import viewsets
 # Create your views here.
 
 from catalog.models import Evidence, Evi_type, Evi_case
+from catalog.serializers import EvidenceSerializer
 
 def index(request):
     """view func for homepage of site."""
@@ -27,4 +28,6 @@ class CaseEviView(generic.ListView):
 class CaseDetailView(generic.DetailView):
     model = Evi_case
 
-
+class EvidenceViewSet(viewsets.ModelViewSet):
+    queryset = Evidence.objects.all()
+    serializer_class = EvidenceSerializer
