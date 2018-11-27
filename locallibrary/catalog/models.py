@@ -22,9 +22,9 @@ class Evidence(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return self.evi_number
+        return str(self.evi_number)
     def get_absolute_url(self):
-        return reverse('evidence-detail', args=[str(self.id)])
+        return reverse('evidence-detail', args=[str(self.evi_number)])
 
 
 

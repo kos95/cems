@@ -9,8 +9,8 @@ def index(request):
     """view func for homepage of site."""
 
     num_evi = Evidence.objects.all().count()
-    num_type = Evidence.objects.all().count()
-    num_case = Evidence.objects.all().count()
+    num_type = Evi_type.objects.all().count()
+    num_case = Evi_case.objects.all().count()
 
     context = {
         'num_evi':num_evi,
@@ -31,3 +31,9 @@ class CaseDetailView(generic.DetailView):
 class EvidenceViewSet(viewsets.ModelViewSet):
     queryset = Evidence.objects.all()
     serializer_class = EvidenceSerializer
+
+class EvidenceView(generic.ListView):
+    model = Evidence
+
+class EvidenceDetailView(generic.DetailView):
+    model = Evidence

@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Evidence Number : {{ evidence.evi_number}}</h1>
+
+  <p><strong>Case Number:</strong> <a href="{% url 'case-detail' evidence.evi_case.pk %}">{{ evidence.evi_case }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Evidence Type:</strong> {{ evidence.evi_type }}</p>
+  <p><strong>Summary:</strong> {{ evidence.summary }}</p> 
+  <p><strong>Evidence Time:</strong> {{ evidence.evi_time }}</p>  
+  <img src="{{MEDIA_URL}}{{ evidence.signiture.url }}" width="240">
+
+
+{% endblock %}

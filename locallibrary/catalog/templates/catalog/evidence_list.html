@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Evidence List</h1>
+  {% if evidence_list %}
+  <ul>
+    {% for evidence in evidence_list %}
+      <li>
+        <a href="{{ evidence.get_absolute_url }}">{{ evidence.evi_number }}</a> ({{evidence.summary}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no evidence in the DB.</p>
+  {% endif %}       
+{% endblock %}

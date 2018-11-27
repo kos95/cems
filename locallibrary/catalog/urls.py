@@ -13,4 +13,8 @@ urlpatterns = [
     path('case/<int:pk>', views.CaseDetailView.as_view(), name='case-detail'),
     url(r'^rest/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
+    
+    path('evidences/', views.EvidenceView.as_view(), name = 'evidences'),
+    path('evidence/<int:pk>', views.EvidenceDetailView.as_view(), name='evidence-detail'),
     ]
