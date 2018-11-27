@@ -1,15 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Title: Case {{ case.number }}</h1>
+  <h1>Title: Case {{ evi_case.number }}</h1>
 
-  <p><strong>Case Number:</strong> <a href="">{{ case.number }}</a></p> <!-- author detail link not yet defined -->
-  <p><strong>Summary:</strong> {{ case.summary }}</p>
+  <p><strong>Case Number:</strong> <a href="">{{ evi_case.number }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Summary:</strong> {{ evi_case.summary }}</p>
  
   <div style="margin-left:20px;margin-top:20px">
     <h4>Copies</h4>
 
-    {% for copy in case.evidence_set.all %}
+    {% for copy in evi_case.evidence_set.all %}
       <hr>
       <p>{{ copy.get_status_display }}</p>
       <p><strong>Evidence Number:</strong> {{copy.evi_number}}</p>
