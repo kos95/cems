@@ -29,7 +29,7 @@ class Evidence(models.Model):
 
 class Evi_type(models.Model):
     """Model representing evidence type."""
-    name = models.CharField(max_length=200, help_text = 'Enter a evidence type(e.g. fingerprint)')
+    name = models.CharField(max_length=200, primary_key=True, help_text = 'Enter a evidence type(e.g. fingerprint)')
 
     class Meta:
         ordering = ['name']
@@ -37,7 +37,7 @@ class Evi_type(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a particular crime type."""
-        return reverse('type-detail', args=[str(self.id)])
+        return reverse('type-detail', args=[self.name])
 
 
     def __str__(self):
