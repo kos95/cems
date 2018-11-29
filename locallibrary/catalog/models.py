@@ -48,7 +48,7 @@ class Evi_type(models.Model):
 
 class Evi_case(models.Model):
     """Model representing evidence case."""
-    number = models.AutoField(primary_key=True)
+    number = models.BigIntegerField(primary_key=True)
     summary = models.TextField(max_length=1000, null = True)
     class Meta:
         ordering = ['number']
