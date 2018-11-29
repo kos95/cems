@@ -56,7 +56,7 @@ class Evi_case(models.Model):
  
     def get_absolute_url(self):
         """Returns the url to access a particular crime type."""
-        return reverse('case-detail', args=[str(self.id)])
+        return reverse('case-detail', args=[str(self.number)])
 
 
     def __str__(self):
