@@ -12,8 +12,7 @@ class Evidence(models.Model):
     evi_type = models.ForeignKey('Evi_type', on_delete=models.SET_NULL, null=True)
     summary = models.TextField(max_length=1000, null=True, help_text = 'Enter brief description of evidence')
     evi_time = models.DateTimeField(null=True, blank=True)
-    signiture = models.ImageField(blank=True, null=True,
-            upload_to="signitures/")
+    signiture = models.ImageField(blank=True, null=True,)
     picture = models.ImageField(blank=True, null=True,
             upload_to="pictures/")
 

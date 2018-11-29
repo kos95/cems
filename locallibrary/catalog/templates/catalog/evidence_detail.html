@@ -6,8 +6,13 @@
   <p><strong>Case Number:</strong> <a href="{% url 'case-detail' evidence.evi_case.pk %}">{{ evidence.evi_case }}</a></p> <!-- author detail link not yet defined -->
   <p><strong>Evidence Type:</strong> {{ evidence.evi_type }}</p>
   <p><strong>Summary:</strong> {{ evidence.summary }}</p> 
-  <p><strong>Evidence Time:</strong> {{ evidence.evi_time }}</p>  
-  <img src="{{MEDIA_URL}}{{ evidence.signiture.url }}" width="240">
+
+ <p><strong>evidence time:</strong> {{ evidence.evi_time }}</p>  
+ <p><strong>evidence Picture:</strong></p>
+ <img src="{{ evidence.picture.url }}" width="240">
+
+ <p><strong>Attendant Signiture:</strong></p>  
+ <img src="{{ evidence.signiture.url }}" width="240">
 
 
 {% endblock %}
