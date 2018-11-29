@@ -3,7 +3,7 @@ from rest_framework import viewsets
 # Create your views here.
 
 from catalog.models import Evidence, Evi_type, Evi_case
-from catalog.serializers import EvidenceSerializer
+from catalog.serializers import EvidenceSerializer, EviCaseSerializer
 
 def index(request):
     """view func for homepage of site."""
@@ -31,6 +31,10 @@ class CaseDetailView(generic.DetailView):
 class EvidenceViewSet(viewsets.ModelViewSet):
     queryset = Evidence.objects.all()
     serializer_class = EvidenceSerializer
+
+class EviCaseViewSet(viewsets.ModelViewSet):
+    queryset = Evi_case.objects.all()
+    serializer_class = EviCaseSerializer
 
 class EvidenceView(generic.ListView):
     model = Evidence
