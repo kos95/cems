@@ -8,7 +8,7 @@ router = routers.DefaultRouter()
 router.register(r'evidences', views.EvidenceViewSet)
 
 router_case = routers.DefaultRouter()
-router_case.register(r'case', views.EviCaseViewSet)
+router_case.register(r'cases', views.EviCaseViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
