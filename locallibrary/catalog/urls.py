@@ -11,7 +11,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('cases/', views.CaseEviView.as_view(), name = 'cases'),
     path('case/<int:pk>', views.CaseDetailView.as_view(), name='case-detail'),
-    url(r'^rest/', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     
     
